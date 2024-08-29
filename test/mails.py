@@ -41,7 +41,7 @@ def upload_excel():
         global df
         df = pd.read_excel(filepath)
         messagebox.showinfo("File Uploaded", "Excel file has been uploaded successfully!")
-    return df
+    
 
 def upload_attachment():
     global attachment_path
