@@ -130,3 +130,7 @@ config.yaml
 credentials.yaml
 sent_emails.txt
 updated_email_status.xlsx
+.exe
+.ico
+.spec
+build/
