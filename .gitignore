@@ -115,6 +115,7 @@ $RECYCLE.BIN/
 *.xlsx
 *.db
 *.sqlite3
+*.yaml
 
 # Ignore documentation build artifacts
 docs/_build/
