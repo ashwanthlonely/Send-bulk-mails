@@ -14,7 +14,7 @@ with open('email_accounts.yaml', 'r') as f:
 email_accounts = email_accounts_config['email_accounts']
 
 # Load your DataFrame and add a "Status" column if it doesn't exist
-excel_path = r"C:\Users\ashwa\OneDrive\Desktop\Merged_File.xlsx"
+excel_path = r"C:\Users\ashwa\OneDrive\Desktop\Nonvoice_merged_data1.xlsx"
 df = pd.read_excel(excel_path)
 if 'Status' not in df.columns:
     df['Status'] = ''  # Create a new column for Status if it doesn't exist
@@ -102,21 +102,42 @@ for index, row in df.iterrows():
     cc_email = ''
 
     # Create the email content
-    subject = '5-Day Workshop with Confirmed Job Opportunity – Exclusive Offer!'
-    body = f"""Dear {name}, 
+    subject = 'Job Assured Training Program Invitation!'
+    body = """<b>Dear {name}</b>, 
+<p><b>We are pleased to invite you to our Job-Assured Training Program</b>, which will train you as a <b>Full Stack Java Developer, Data Analyst</b> with AI, Python, and SAP skills. You pay the program fees only after receiving an offer letter from one of our clients.</p>
+<p><b>This is a golden opportunity for Freshers and working professionals who wants to switch into IT career.</b></p>
+<b>Program Cost:</b> Rs. 2,50,000 + Taxes (loan options available)
 
-We are excited to invite you to a 5-day intensive workshop training designed exclusively for freshers. This program not only equips you with essential technical and professional skills but also provides a direct path to a confirmed job opportunity with one of our esteemed clients.
+<b>Program Details:</b>
 
-Details of the Workshop: Fresher( Java , Data analyst with AI , DevOps  ) 
+<ul>
+  <li><b>Program Name:</b> Job-Assured IT Programs</li>
+  <li><b>Salary Package:</b> CTC of Rs. 4.5 to 5.5 lakhs per annum</li>
+  <li><b>Program Duration:</b> 2 months</li>
+  <li><b>Selection Process:</b> Initial Screening &gt;&gt; Assessment &gt;&gt; Interview &gt;&gt; Provisional Offer Letter &gt;&gt; Training &gt;&gt; Join Company</li>
+</ul>
 
-Duration: 5 days
-Training Focus: [Brief description of the skills/technologies covered]
-Job Offer: Upon successful completion of the workshop and selection by our client, you will receive a confirmed job offer.
-Salary Package: ₹5,00,000 to ₹6,00,000 per annum (depending on your performance and the client's evaluation).
-Placement Fee Structure: Upon securing a job with our client, there will be a placement fee of ₹2,50,000. This fee is to be paid after you have been selected by the client and received the job offer.
+<b>Eligibility Criteria:</b>
 
-Best Regards,
-HR Department
+<ul>
+  <li>B.E/B.Tech graduates (<b>CS, IT, & Electronics graduates preferred</b>)</li>
+  <li>Graduates from the <b>2015 to 2023 batch</b></li>
+  <li><b>Minimum 55% marks</b> or equivalent across 10th, 12th, and UG</li>
+</ul>
+
+<b>Job Location:</b> Hyderabad<br>
+<b>Program Cost:</b> Rs. 2,50,000 + Taxes (loan options available)
+
+<p>With over <b>5+ years of experience</b> in successfully shaping candidates' futures, we ensure a smooth transition into your IT career.</p>
+
+<p>Additionally, we request that <b>one of your family members speaks with us</b> before you join our program. For security purposes, you will be required to submit your <b>educational certificates</b> and a <b>cheque</b>.</p>
+
+<b>Loan Processing Fees:</b> Rs. 20,000/-
+
+<p>If you have any further questions, please feel free to contact us.</p>
+
+<b>Regards<br> Hr-Team<br> Hyderabad, Hi-tech city,<br> Ph: +91-8121698002, +91-9030216038<b>
+
 """
 
     message = MIMEMultipart()
@@ -186,4 +207,3 @@ df.to_excel(excel_path, index=False)
 
 # Quit the SMTP server and IMAP logout
 server.quit()
-mail.logout()
