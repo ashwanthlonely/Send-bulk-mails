@@ -103,7 +103,7 @@ for index, row in df.iterrows():
 
     # Create the email content
     subject = 'Job Assured Training Program Invitation!'
-    body = """<b>Dear {name}</b>, 
+    body = f"""<b>Dear {name}</b>, 
 <p><b>We are pleased to invite you to our Job-Assured Training Program</b>, which will train you as a <b>Full Stack Java Developer, Data Analyst</b> with AI, Python, and SAP skills. You pay the program fees only after receiving an offer letter from one of our clients.</p>
 <p><b>This is a golden opportunity for Freshers and working professionals who wants to switch into IT career.</b></p>
 <b>Program Cost:</b> Rs. 2,50,000 + Taxes (loan options available)
@@ -141,7 +141,7 @@ for index, row in df.iterrows():
 """
 
     message = MIMEMultipart()
-    message.attach(MIMEText(body, 'plain'))
+    message.attach(MIMEText(body, 'html'))
 
     message['From'] = email_accounts[account_index]['email']
     message['To'] = email

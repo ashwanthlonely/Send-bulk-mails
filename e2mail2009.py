@@ -26,7 +26,7 @@ imap_server = 'imap.secureserver.net'
 imap_port = 993
 
 # Email sending limit per account
-email_limit_per_account = 500
+email_limit_per_account = 450
 email_refresh_interval = timedelta(days=1)  # 24 hours
 
 # Function to update email count and timestamp in the YAML file
@@ -102,44 +102,50 @@ for index, row in df.iterrows():
     cc_email = ''
 
     # Create the email content
-    subject = """Job-Assured Internship Program Invitation""" 
+    subject = """Job-Assured Training Program Invitation with competitive course fees""" 
 
     body = f"""<b>Dear {name},</b> 
 
-<p>We are thrilled to invite you to join <b>EarEase’s exclusive 3-month Internship Program</b> in <b>Data Science</b> and <b>MERN Stack Development</b>, beginning <b>November 11th</b>! This program is uniquely crafted to ensure that you gain industry-relevant skills with a <b>100% Job Placement Guarantee</b> upon successful completion.</p>
+<p>We are thrilled to invite you to join <b>EarEase’s exclusive 6-month Internship Program</b> in <b>Data Science</b> and <b>MERN Stack Development</b>, beginning <b>November 25th</b>! This program is uniquely crafted to ensure you gain industry-relevant skills with a <b>100% Job Placement Guarantee</b> upon successful completion.</p>
 
 <h3>Why Enroll in Our Program?</h3>
 <ul>
-    <li><b>Expert Trainers:</b> Learn directly from industry leaders with <b>7+ years of experience</b> at top companies, providing real-world insights and hands-on expertise.</li>
+    <li><b>Expert Trainers:</b> Learn directly from industry leaders with <b>10+ years of experience</b> at top companies, providing real-world insights and hands-on expertise.</li>
     <li><b>Guaranteed Placement:</b> Successfully complete the program, and receive a <b>100% job placement</b> either at EarEase or within our extensive industry network.</li>
     <li><b>Internship Certificate:</b> Boost your resume with an official certificate upon program completion, solidifying your achievements.</li>
 </ul>
 
 <h3>Course Fee:</h3>
-<p>The program is available for a competitive fee of only Rs:<b>35,999 INR</b> Including all taxes.</p>
+<p>The program is available for a competitive fee of only <b>Rs:35,999 INR</b>, including all taxes. EMI options are also available for added convenience.</p>
 
 <h3>What You’ll Learn:</h3>
 <ul>
-    <li><b>Comprehensive Training:</b> Receive in-depth instruction in <b>Data Science</b> or <b>MERN Stack Development</b>.</li>
+    <li><b>Comprehensive Training:</b> Receive <b>3 months</b> of in-depth instruction in <b>Data Science</b> or <b>MERN Stack Development</b>, followed by <b>3 months of real-time project experience.</b></li>
     <li><b>Soft Skills Development:</b> Enhance your career prospects with specialized soft skills training.</li>
     <li><b>Real-World Projects:</b> Build a strong portfolio with hands-on projects reflecting current industry demands.</li>
 </ul>
 
-<h3>Next Steps:</h3>
-<p>Seats are limited, so secure your place now! To enroll, please complete the form below:</p>
-<p><a href="https://forms.gle/eSxGn6TGzVRkADvA7"><b>Enrollment Form</b></a></p>
+<h3>Internship Benefits:</h3>
+<ul>
+    <li><b>Competitive Package:</b> Following the internship, successful candidates can expect a package ranging from <b>2.5 to 5.5 LPA</b>, based on performance.</li>
+    <li><b>Equity for Top Performers:</b> The top 3 performers will receive <b>0.1% to 0.5% equity</b> in the project they contribute to.</li>
+</ul>
 
-<p>Our HR team will reach out after you’ve registered to finalize your enrollment.</p>
+<h3>Next Steps:</h3>
+<p>Seats are limited, so secure your place now! </p>
+<p> If you are interested in joining our program, please share your CV and mention you are ok with fee and terms.</p>
+<p>Our HR team will reach out to finalize your enrollment.</p>
 
 <p>We look forward to welcoming you to the <b>EarEase family</b> and helping you launch your tech career with a guaranteed position!</p>
 
 <p>Best regards,<br>
 <b>HR Team</b><br>
-<b>EarEase</b><br>
-<a href="http://www.eareasetech.com"><b>www.eareasetech.com</b></a></p>
+<b>EarEase Tech</b><br>
 
 """
-
+# To enroll, please complete the form below:</p>
+# <p><a href="https://forms.gle/bBFBVkUVhQmnFg8Q6"><b>Enrollment Form</b></a></p>
+# <p><b>Note: For any further clarifications, please reach out to us at hr@eareasetech.com</b>.</p>
     message = MIMEMultipart()
     message.attach(MIMEText(body, 'html'))
 
